@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: demo-for-curd-operations
+  datasource:
+    url : jdbc:mysql://localhost:3306/user_management
+    username : root
+    password : admin
+  jpa:
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto : update
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true #14
+  endpoints:
+    web:
+      exposure:
+        include: '*' #13
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: "SpringBoot Restful service"
+    description: "MVC"
+    version: "1.0"
